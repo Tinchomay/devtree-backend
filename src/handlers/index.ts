@@ -167,7 +167,7 @@ export const getUserByHandle = async (req : Request, res: Response) => {
 }
 
 export const searchByhandle = async(req: Request, res: Response) => {
-    const {handle} = req.body;
+    const {handle} = req.params;
     try {
         const userExists = await User.findOne({handle});
         if(userExists) {
